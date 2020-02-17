@@ -1,3 +1,4 @@
+#!/bin/sh
 firstName()
 {
 echo "Enter the First Name"
@@ -32,11 +33,13 @@ password()
 {
 echo "Enter the password"
 read userPassword
-if [[ $userPassword =~ ^[A-Z]* && $password =~ [a-z]* && $password =~ [0-9]*$ ]];
+#if [[ $userPassword =~ ^[a-zA-Z0-9]+$ ]] && [[ ! $userPassword =~ ^[0-9]+$ ]];
+if [[ "$userPassword" =~ [^0-9A-Za-z]+ ]]; 
+#if [[ "$userPassword" =~ ^[[:alnum:]]*$ ]] && [[ ! "$userPassword" =~ ^[[:digit:]]+$ ]] && echo ok
 then
 echo "Password match"
 else
-echo "dsn't match"
+echo "dosn't match"
 fi
 }
 password
@@ -51,7 +54,7 @@ if [[ $number =~ ^[0-9]*$ ]];
 then 
 echo "number match"
 else
-echo "number dsn't match"
+echo "number dosn't match"
 fi
 }
 phone
