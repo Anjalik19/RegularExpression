@@ -32,8 +32,7 @@ password()
 {
 echo "Enter the password"
 read userPassword
-if [[ $userPassword =~ ^[[:alnum:]]+$ ]];
-#if [[ $userPassword =~ ^[A-Z]* && $password =~ [a-z]* && $password =~ [0-9]*$ ]];
+if [[ $userPassword =~ ^[A-Z]* && $password =~ [a-z]* && $password =~ [0-9]*$ ]];
 then
 echo "Password match"
 else
